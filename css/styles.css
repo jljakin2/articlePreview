@@ -1,0 +1,247 @@
+/* ======= VARIABLES ======== */
+:root {
+  --dark-grey-blue: hsl(217, 19%, 35%);
+  --dark-blue-desat: hsl(214, 17%, 51%);
+  --grey-blue: hsl(212, 23%, 69%);
+  --light-grey-blue: hsl(210, 46%, 95%);
+}
+
+/* ======= BASE ======== */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 81.25%;
+}
+
+body {
+  box-sizing: border-box;
+  background: var(--light-grey-blue);
+  color: var(--dark-grey-blue);
+  font-family: "Manrope", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/* ======= LAYOUT ======== */
+.container {
+  background: #fff;
+  width: 56.15rem;
+  height: 21.5rem;
+  display: flex;
+  box-shadow: 0 3rem 3rem 1rem rgba(201, 213, 225, 0.7);
+  border-radius: 1rem;
+}
+
+.image-container {
+  flex: 0 0 39%;
+  height: 100%;
+  background-image: url(../images/drawers.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 1rem 0 0 1rem;
+}
+
+.text-container {
+  flex: 1;
+  height: 100%;
+  padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ======= COMPONENTS ======== */
+
+/* TEXT */
+.title {
+  color: var(--dark-grey-blue);
+  font-size: 1.5rem;
+  width: 98%;
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: var(--dark-blue-desat);
+  font-size: 1rem;
+  width: 98%;
+  flex: 1;
+  margin-bottom: 1.5rem;
+  line-height: 1.6rem;
+}
+
+.user-container {
+  width: 100%;
+  height: 20%;
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+}
+
+.user-profile {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
+}
+
+.user-info {
+  margin-right: auto;
+}
+
+.user-name {
+  font-weight: 700;
+  color: var(--dark-grey-blue);
+}
+
+.user-date {
+  color: var(--dark-blue-desat);
+}
+
+.share-button {
+  border-radius: 50%;
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--light-grey-blue);
+  cursor: pointer;
+  color: var(--dark-grey-blue);
+  position: relative;
+}
+
+.share-button:hover {
+  background: var(--dark-grey-blue);
+  color: #fff;
+}
+
+.share-button:focus {
+  background: var(--dark-grey-blue);
+  color: #fff;
+}
+
+.share-menu {
+  width: 19rem;
+  background: var(--dark-grey-blue);
+  height: 4.2rem;
+  position: absolute;
+  top: 11rem;
+  left: 19.4rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  padding: 1rem 2.5rem;
+  font-size: 1.5rem;
+  visibility: hidden;
+}
+
+.share-menu::after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 2rem solid transparent;
+  border-right: 2rem solid transparent;
+  border-top: 2rem solid var(--dark-grey-blue);
+}
+
+.share-menu i:hover {
+  color: var(--grey-blue);
+}
+
+.share-menu__title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  font-weight: 500;
+  color: var(--grey-blue);
+}
+
+.visible {
+  visibility: visible;
+  transition: ease-in;
+}
+
+@media only screen and (max-width: 50em) {
+  .container {
+    width: 25.15rem;
+    height: 39.38rem;
+    flex-direction: column;
+  }
+
+  .image-container {
+    border-radius: 1rem 1rem 0 0;
+    height: 15.38rem;
+  }
+
+  .text-container {
+    padding: 2.5rem 2rem 0.5rem 2rem;
+    position: relative;
+  }
+
+  .title {
+    width: 100%;
+    font-size: 1.3rem;
+  }
+
+  .description {
+    width: 100%;
+  }
+
+  .share-button {
+    z-index: 10;
+  }
+
+  .share-button--visible:hover {
+    background: #fff;
+    color: var(--dark-grey-blue);
+  }
+
+  .share-button--visible {
+    color: #fff;
+    background: var(--dark-blue-desat);
+  }
+
+  .share-menu {
+    font-size: 1.7rem;
+    width: 25.15rem;
+    height: 4.9rem;
+    top: 19rem;
+    left: 0;
+    border-radius: 0 0 1rem 1rem;
+    justify-content: flex-start;
+    visibility: hidden;
+  }
+
+  .visible {
+    visibility: visible;
+  }
+
+  .share-menu i {
+    margin-left: 1rem;
+  }
+
+  .share-menu::after {
+    display: none;
+  }
+}
